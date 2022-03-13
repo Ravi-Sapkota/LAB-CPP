@@ -5,25 +5,16 @@
 
 using namespace std;
 
-const double g = 9.8;
-
 class Weight {
-  double m;
+  double m, g;
 
 public:
-  void input() {
-    cout << "Enter the mass for which you want to find the weight(in kg):"
-         << endl;
-    cin >> m;
-  }
-  void displayWeight() {
+  Weight(double m, double g = 9.8) {
     cout << "The weight of given mass is " << m * g << " N." << endl;
   }
 };
 
 int main() {
-  Weight x;
-  x.input();
-  x.displayWeight();
+  Weight x(52);
   return 0;
 }
