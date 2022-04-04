@@ -1,26 +1,22 @@
 // Write a program to overload (=) operator.
 #include <iostream>
-
-using std::cout;
-using std::endl;
-
 class Sample {
   int num;
 
 public:
   Sample() {}
-
   Sample(int n) { num = n; }
-
-  // '+' operator is overloaded by default in c++
-  void operator=(Sample y) { cout << "Value = " << y.num << endl; }
+  void operator=(Sample y) { num=y.num; }
+  void display(){std::cout<<"Value = " << num << "\n";}
 };
 
 int main() {
   Sample val;
   Sample f(2);
-
+//   Before overloading
+  val.display();
   val = f;
-
+//   After overloading
+  val.display();
   return 0;
 }
